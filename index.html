@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============================================================
+    SEO — CUSTOMISE THESE
+  ============================================================ -->
+  <title>Sk Irfan Ahmed</title>
+  <meta name="description"
+    content="Portfolio of Sk Irfan Ahmed — a passionate AI Engineer, Machine Learning Engineer, Data Scientist, Full-Stack Developer building elegant, high-performance web experiences." />
+  <meta name="author" content="Sk Irfan Ahmed" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sk Irfan Ahmed · AI Engineer, Machine Learning Engineer, Data Scientist" />
+  <meta property="og:description"
+    content="Portfolio of Sk Irfan Ahmed — building elegant, high-performance web experiences." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+    LOADING OVERLAY
+  ============================================================ -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loader">
+      <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="chipGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2d2d2d"></stop>
+            <stop offset="100%" stop-color="#0f0f0f"></stop>
+          </linearGradient>
+          <linearGradient id="textGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#eeeeee"></stop>
+            <stop offset="100%" stop-color="#888888"></stop>
+          </linearGradient>
+          <linearGradient id="pinGradient" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0%" stop-color="#bbbbbb"></stop>
+            <stop offset="50%" stop-color="#888888"></stop>
+            <stop offset="100%" stop-color="#555555"></stop>
+          </linearGradient>
+        </defs>
+
+        <g id="traces">
+          <path d="M100 100 H200 V210 H326" class="trace-bg"></path>
+          <path d="M100 100 H200 V210 H326" class="trace-flow purple"></path>
+
+          <path d="M80 180 H180 V230 H326" class="trace-bg"></path>
+          <path d="M80 180 H180 V230 H326" class="trace-flow blue"></path>
+
+          <path d="M60 260 H150 V250 H326" class="trace-bg"></path>
+          <path d="M60 260 H150 V250 H326" class="trace-flow yellow"></path>
+
+          <path d="M100 350 H200 V270 H326" class="trace-bg"></path>
+          <path d="M100 350 H200 V270 H326" class="trace-flow green"></path>
+
+          <path d="M700 90 H560 V210 H474" class="trace-bg"></path>
+          <path d="M700 90 H560 V210 H474" class="trace-flow blue"></path>
+
+          <path d="M740 160 H580 V230 H474" class="trace-bg"></path>
+          <path d="M740 160 H580 V230 H474" class="trace-flow green"></path>
+
+          <path d="M720 250 H590 V250 H474" class="trace-bg"></path>
+          <path d="M720 250 H590 V250 H474" class="trace-flow red"></path>
+
+          <path d="M680 340 H570 V270 H474" class="trace-bg"></path>
+          <path d="M680 340 H570 V270 H474" class="trace-flow yellow"></path>
+        </g>
+
+        <rect x="330" y="190" width="140" height="100" rx="20" ry="20" fill="url(#chipGradient)" stroke="#222"
+          stroke-width="3" filter="drop-shadow(0 0 6px rgba(0,0,0,0.8))"></rect>
+
+        <!-- Left pins -->
+        <g>
+          <rect x="322" y="205" width="8" height="10" fill="url(#pinGradient)" rx="2"></rect>
+          <rect x="322" y="225" width="8" height="10" fill="url(#pinGradient)" rx="2"></rect>
+          <rect x="322" y="245" width="8" height="10" fill="url(#pinGradient)" rx="2"></rect>
+          <rect x="322" y="265" width="8" height="10" fill="url(#pinGradient)" rx="2"></rect>
+        </g>
+
+        <!-- Right pins -->
+        <g>
+          <rect x="470" y="205" width="8" height="10" fill="url(#pinGradient)" rx="2"></rect>
+          <rect x="470" y="225" width="8" height="10" fill="url(#pinGradient)" rx="2"></rect>
+          <rect x="470" y="245" width="8" height="10" fill="url(#pinGradient)" rx="2"></rect>
+          <rect x="470" y="265" width="8" height="10" fill="url(#pinGradient)" rx="2"></rect>
+        </g>
+
+        <text x="400" y="240" font-family="'Outfit', Arial, sans-serif" font-size="22" fill="url(#textGradient)"
+          text-anchor="middle" alignment-baseline="middle">
+          Loading
+        </text>
+
+        <!-- Left endpoints -->
+        <circle cx="100" cy="100" r="5" fill="#1a1a1a" stroke="#333" stroke-width="1"></circle>
+        <circle cx="80" cy="180" r="5" fill="#1a1a1a" stroke="#333" stroke-width="1"></circle>
+        <circle cx="60" cy="260" r="5" fill="#1a1a1a" stroke="#333" stroke-width="1"></circle>
+        <circle cx="100" cy="350" r="5" fill="#1a1a1a" stroke="#333" stroke-width="1"></circle>
+
+        <!-- Right endpoints -->
+        <circle cx="700" cy="90" r="5" fill="#1a1a1a" stroke="#333" stroke-width="1"></circle>
+        <circle cx="740" cy="160" r="5" fill="#1a1a1a" stroke="#333" stroke-width="1"></circle>
+        <circle cx="720" cy="250" r="5" fill="#1a1a1a" stroke="#333" stroke-width="1"></circle>
+        <circle cx="680" cy="340" r="5" fill="#1a1a1a" stroke="#333" stroke-width="1"></circle>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ============================================================
+    CURSOR GLOW (decorative)
+  ============================================================ -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ============================================================
+    NAVBAR
+  ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <!-- CUSTOMISE: your logo / initials -->
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>irfan<span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+
+      </ul>
+
+      <!-- CUSTOMISE: link to your CV PDF -->
+      <a href="assets/resume.pdf" target="_blank" class="btn-resume nav-cta">
+        <span class="button-content"><i class="fa-solid fa-file-arrow-down"></i> Resume</span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+    HERO SECTION
+  ============================================================ -->
+  <section class="hero" id="hero">
+    <div class="hero-particles" id="heroParticles"></div>
+
+    <div class="hero-content">
+
+
+      <!-- CUSTOMISE: your name -->
+      <h1 class="hero-name">Hi, I'm <span class="gradient-text">Irfan</span></h1>
+
+      <!-- CUSTOMISE: your roles — JS will cycle through them -->
+      <p class="hero-role">
+        I'm a <span class="typed-text" id="typedText"></span><span class="cursor-blink">|</span>
+      </p>
+
+      <!-- CUSTOMISE: short tagline -->
+      <p class="hero-tagline">
+        I craft fast, accessible & beautiful digital experiences —<br />
+        from pixel-perfect UIs to robust back-end systems.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-primary btn-cta-pulse">
+          <i class="fa-solid fa-rocket"></i> View My Work
+        </a>
+        <a href="#contact" class="btn btn-ghost">
+          Let's Talk <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- CUSTOMISE: social links -->
+      <div class="hero-socials">
+        <a href="https://github.com/yourhandle" target="_blank" class="social-pill" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="https://linkedin.com/in/yourhandle" target="_blank" class="social-pill" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://twitter.com/yourhandle" target="_blank" class="social-pill" aria-label="Twitter">
+          <i class="fa-brands fa-x-twitter"></i> Twitter
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    ABOUT SECTION
+  ============================================================ -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Who am I?</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-photo-wrap">
+          <!-- CUSTOMISE: replace with your photo path -->
+          <div class="about-photo-placeholder">
+            <i class="fa-solid fa-user-astronaut"></i>
+          </div>
+          <div class="about-photo-glow"></div>
+        </div>
+
+        <div class="about-text">
+          <!-- CUSTOMISE: your bio paragraphs -->
+          <p>
+            I'm a <strong>full-stack developer</strong> with a passion for crafting sleek,
+            performant applications. I love the intersection of design and engineering —
+            turning complex problems into simple, elegant solutions.
+          </p>
+          <p>
+            When I'm not pushing pixels or wrangling APIs, you'll find me exploring the
+            latest in AI/ML, contributing to open-source, or brewing the perfect cup of coffee ☕.
+          </p>
+          <p>
+            I believe great software is as much about the experience as it is about the code.
+          </p>
+
+          <!-- CUSTOMISE: quick facts -->
+          <ul class="about-facts">
+            <li>
+              <span class="fact-icon"><i class="fa-solid fa-location-dot"></i></span>
+              <span>Based in <strong>Kolkata, India</strong></span>
+            </li>
+            <li>
+              <span class="fact-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+              <span> Bachelor of Computer Application, <strong>Techno India University</strong></span>
+            </li>
+            <li>
+              <span class="fact-icon"><i class="fa-solid fa-briefcase"></i></span>
+              <span><strong>Fresher</strong> of professional experience</span>
+            </li>
+            <li>
+              <span class="fact-icon"><i class="fa-solid fa-language"></i></span>
+              <span>English,Hindi,Bengali</span>
+            </li>
+          </ul>
+
+          <a href="#contact" class="btn btn-primary about-cta-btn">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    SKILLS SECTION
+  ============================================================ -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What I work with</span>
+        <h2 class="section-title">Skills & Tools</h2>
+      </div>
+
+      <!-- CUSTOMISE: add/remove skill cards -->
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title"><i class="fa-solid fa-code"></i> Frontend</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">Tailwind</span>
+            <span class="skill-tag">Framer Motion</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title"><i class="fa-solid fa-server"></i> Backend</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">Express</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">Redis</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title"><i class="fa-solid fa-cloud"></i> DevOps & Cloud</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Kubernetes</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Vercel</span>
+            <span class="skill-tag">GitHub Actions</span>
+            <span class="skill-tag">Nginx</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Other</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">GraphQL</span>
+            <span class="skill-tag">Jest</span>
+            <span class="skill-tag">Agile / Scrum</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    PROJECTS SECTION
+  ============================================================ -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What I've built</span>
+        <h2 class="section-title">Featured Projects</h2>
+      </div>
+
+      <!-- CUSTOMISE: add/remove project cards. Each card has:
+           - data-category: used for filtering (web | mobile | ai | other)
+           - title, description, tags, links
+      -->
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="ai">AI / ML</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- PROJECT 1 -->
+        <article class="project-card" data-category="web">
+          <div class="project-card-header">
+            <div class="project-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link" aria-label="GitHub repo">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="#" target="_blank" class="project-link" aria-label="Live demo">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Project One</h3>
+          <p class="project-desc">
+            A short description of what this project does, the problem it solves,
+            and any impressive metrics or outcomes.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">React</span>
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">MongoDB</span>
+          </div>
+        </article>
+
+        <!-- PROJECT 2 -->
+        <article class="project-card" data-category="ai">
+          <div class="project-card-header">
+            <div class="project-icon"><i class="fa-solid fa-brain"></i></div>
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link" aria-label="GitHub repo">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="#" target="_blank" class="project-link" aria-label="Live demo">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">AI Project</h3>
+          <p class="project-desc">
+            An ML-powered application that does something incredible. Mention the model,
+            dataset size, or accuracy achieved.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">FastAPI</span>
+            <span class="project-tag">TensorFlow</span>
+          </div>
+        </article>
+
+        <!-- PROJECT 3 -->
+        <article class="project-card" data-category="mobile">
+          <div class="project-card-header">
+            <div class="project-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link" aria-label="GitHub repo">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="#" target="_blank" class="project-link" aria-label="Live demo">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Mobile App</h3>
+          <p class="project-desc">
+            A cross-platform mobile application with a delightful UX. Mention downloads,
+            ratings, or key features.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">React Native</span>
+            <span class="project-tag">Expo</span>
+            <span class="project-tag">Firebase</span>
+          </div>
+        </article>
+
+        <!-- PROJECT 4 -->
+        <article class="project-card" data-category="web">
+          <div class="project-card-header">
+            <div class="project-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link" aria-label="GitHub repo">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="#" target="_blank" class="project-link" aria-label="Live demo">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Dashboard SaaS</h3>
+          <p class="project-desc">
+            A data analytics dashboard with real-time charts, role-based access,
+            and export capabilities.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Next.js</span>
+            <span class="project-tag">PostgreSQL</span>
+            <span class="project-tag">Recharts</span>
+          </div>
+        </article>
+
+        <!-- PROJECT 5 -->
+        <article class="project-card" data-category="ai">
+          <div class="project-card-header">
+            <div class="project-icon"><i class="fa-solid fa-robot"></i></div>
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link" aria-label="GitHub repo">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="#" target="_blank" class="project-link" aria-label="Live demo">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">LLM Chatbot</h3>
+          <p class="project-desc">
+            A context-aware chatbot built on top of an open-source LLM with RAG,
+            streaming responses, and a sleek UI.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">LangChain</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Vector DB</span>
+          </div>
+        </article>
+
+        <!-- PROJECT 6 -->
+        <article class="project-card" data-category="web">
+          <div class="project-card-header">
+            <div class="project-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link" aria-label="GitHub repo">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="#" target="_blank" class="project-link" aria-label="Live demo">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">E-Commerce Platform</h3>
+          <p class="project-desc">
+            Full-featured online store with Stripe payments, inventory management,
+            and a blazing-fast storefront.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Next.js</span>
+            <span class="project-tag">Stripe</span>
+            <span class="project-tag">Prisma</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+    FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">
+        <!-- CUSTOMISE: your name -->
+        Designed &amp; built by <span class="gradient-text">Irfan</span> ·
+        <span id="footerYear"></span>
+      </p>
+      <p class="footer-sub">Made with <i class="fa-solid fa-heart" style="color:#e05c7a"></i> and ☕</p>
+    </div>
+  </footer>
+  <!-- ============================================================
+    GITHUB STAR BUTTON (fixed bottom-right)
+    CUSTOMISE: change the href to your repo URL
+  ============================================================ -->
+  <a href="https://github.com/yourhandle/your-repo" target="_blank" class="github-star-btn" aria-label="Star on GitHub">
+    <span class="github-star-shine"></span>
+    <div class="github-star-content">
+      <svg class="github-star-icon" viewBox="0 0 438.549 438.549">
+        <path
+          d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z">
+        </path>
+      </svg>
+      <span class="github-star-label">Star this Project</span>
+    </div>
+    <div class="github-star-count">
+      <svg class="github-star-star" viewBox="0 0 24 24" fill="currentColor">
+        <path clip-rule="evenodd"
+          d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+          fill-rule="evenodd"></path>
+      </svg>
+      <span class="github-star-number">0</span>
+    </div>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
