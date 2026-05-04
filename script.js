@@ -235,16 +235,21 @@ const ROLES = [
   const sections = document.querySelectorAll('section[id]');
 
   window.addEventListener('scroll', () => {
+    // Shrink and deepen background on scroll
     navbar.classList.toggle('scrolled', window.scrollY > 30);
 
-    // Active link
-    let current = '';
+    // Active link highlighting
+    let current = 'hero'; // default to hero
     sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+      const sectionTop = s.offsetTop;
+      const sectionHeight = s.offsetHeight;
+      if (window.scrollY >= sectionTop - 200) {
+        current = s.getAttribute('id');
+      }
     });
+
     links.forEach(l => {
-      l.style.color = l.getAttribute('href') === '#' + current
-        ? 'var(--clr-text)' : '';
+      l.classList.toggle('active', l.getAttribute('href') === '#' + current);
     });
   }, { passive: true });
 })();
@@ -447,4 +452,33 @@ const ROLES = [
       });
     }
   }, { passive: true });
+})();
+
+/* ============================================================
+   THEME TOGGLE
+   ============================================================ */
+(function initThemeToggle() {
+  const btn = document.getElementById('themeToggle');
+  if (!btn) return;
+
+  const icon = btn.querySelector('i');
+  
+  function updateIcon(theme) {
+    if (theme === 'dark') {
+      icon.classList.replace('fa-moon', 'fa-sun');
+    } else {
+      icon.classList.replace('fa-sun', 'fa-moon');
+    }
+  }
+
+  // Initial icon state
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+  updateIcon(currentTheme);
+
+  btn.addEventListener('click', () => {
+    let theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    updateIcon(theme);
+  });
 })();

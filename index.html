@@ -19,6 +19,18 @@
     content="Portfolio of Sk Irfan Ahmed — building elegant, high-performance web experiences." />
   <meta property="og:type" content="website" />
 
+  <!-- Inline script to detect theme before page renders (prevents flash) -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -133,20 +145,25 @@
     <div class="nav-container">
       <!-- CUSTOMISE: your logo / initials -->
       <a href="#hero" class="nav-logo">
-        <span class="logo-bracket">&lt;</span>irfan<span class="logo-bracket">/&gt;</span>
+        I
       </a>
 
       <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
-
       </ul>
 
-      <!-- CUSTOMISE: link to your CV PDF -->
-      <a href="assets/resume.pdf" target="_blank" class="btn-resume nav-cta">
-        <span class="button-content"><i class="fa-solid fa-file-arrow-down"></i> Resume</span>
-      </a>
+      <div class="nav-actions">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <!-- CUSTOMISE: link to your CV PDF -->
+        <a href="assets/resume.pdf" target="_blank" class="btn-resume nav-cta">
+          Resume
+        </a>
+      </div>
 
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -178,11 +195,23 @@
       </p>
 
       <div class="hero-ctas">
-        <a href="#projects" class="btn btn-primary btn-cta-pulse">
-          <i class="fa-solid fa-rocket"></i> View My Work
+        <a href="#projects" class="cssbuttons-io-button">
+          View My Work
+          <div class="icon">
+            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
+            </svg>
+          </div>
         </a>
-        <a href="#contact" class="btn btn-ghost">
-          Let's Talk <i class="fa-solid fa-arrow-right"></i>
+        <a href="#contact" class="cssbuttons-io-button">
+          Let's Talk
+          <div class="icon">
+            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
+            </svg>
+          </div>
         </a>
       </div>
 
@@ -518,7 +547,7 @@
     <div class="container">
       <p class="footer-text">
         <!-- CUSTOMISE: your name -->
-        Designed &amp; built by <span class="gradient-text">Irfan</span> ·
+        Designed &amp; built by <span class="gradient-text">Irfan</span>
         <span id="footerYear"></span>
       </p>
       <p class="footer-sub">Made with <i class="fa-solid fa-heart" style="color:#e05c7a"></i> and ☕</p>
